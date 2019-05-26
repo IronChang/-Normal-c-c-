@@ -111,7 +111,7 @@ struct TelInfo
 /*
 
 int fprintf（FILE * stream，const char * format，...）;  将格式化数据写入流
-int fprintf（FILE * stream，const char * format，...）;  从流中读取格式化数据
+int fscanf（FILE * stream，const char * format，...）;  从流中读取格式化数据
 */
 
 //int main()

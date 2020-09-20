@@ -1,0 +1,76 @@
+#include<iostream>
+ using namespace std;
+#include<string>
+#include<map>
+
+ /*int main()
+ {
+	 map<char, int> map;
+	 string s, t;
+	 cin >> s >> t;
+
+	 for (size_t i = 0; i<s.size(); i++)
+	 {
+		 map[s[i]]++;
+	 }
+
+	 int count=0;
+	 for (size_t i = 0; i < t.size(); i++)
+	 {	
+		 if (s.find(t[i])!= s.npos)
+		 {
+			 if (map[t[i]] != 0)
+			 {
+				 count++;
+				 map[t[i]]--;
+			 }
+		 }
+	 }
+	 cout << count << endl;
+	 system("pause");
+	 return 0;
+ }*/
+
+
+ int main()
+ {
+	 int T;
+	 cin >> T;
+	 while (T--)
+	 {
+		 string s;
+		 cin >> s;
+
+		 //判断近似串长度
+		 int len = s.find(s[0], 1);
+		 //cout << len << endl;
+		 if (len > 3)
+		 {
+			 cout << "No" << endl;
+			 continue;
+		 }
+		 int count = 0;
+		 for (int i = 0; i < len; i++)
+		 {
+			 for (size_t j = i; j < s.size(); j += len)
+			 {
+				 if (s[i] != s[j])
+				 {
+					 count++;
+					 break;
+				 }
+			 }
+		 }
+		 if (count>1)
+		 {
+			 cout << "No" << endl;
+		 }
+		 else
+		 {
+			 cout << "Yes" << endl;
+		 }
+	 }
+
+	 system("pause");
+	 return 0;
+ }
